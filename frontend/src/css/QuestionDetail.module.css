@@ -1,0 +1,363 @@
+/* Base Layout and Sticky Navbar Setup */
+.pageWrapper {
+  min-height: 100vh;
+  background-color: #f9fafb;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  padding-top: 70px; /* Prevents sticky header from overlapping text stream */
+}
+
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 60px;
+  background-color: #ffffff;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 32px;
+  z-index: 1000;
+}
+
+.logo {
+  font-weight: 800;
+  font-size: 1.5rem;
+  color: #2563eb;
+  letter-spacing: -0.5px;
+}
+
+.logoClickable {
+  font-weight: 800;
+  font-size: 1.5rem;
+  color: #2563eb;
+  letter-spacing: -0.5px;
+  cursor: pointer;
+}
+
+.navBarPlaceholder {
+  color: #4b5563;
+  font-weight: 500;
+  font-size: 0.95rem;
+}
+
+.navHomeBtn {
+  background-color: #f3f4f6;
+  border: none;
+  color: #374151;
+  padding: 8px 16px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: background 0.2s ease;
+}
+
+.upvotedActive {
+  color: #10b981 !important; 
+  background-color: #ecfdf5;
+  font-weight: bold;
+  transform: scale(1.1);
+}
+
+
+.downvotedActive {
+  color: #f97316 !important; 
+  background-color: #fff7ed;
+  font-weight: bold;
+  transform: scale(1.1);
+}
+
+.navHomeBtn:hover {
+  background-color: #e5e7eb;
+}
+
+/* Main Content Container Layout */
+.container {
+  max-width: 850px;
+  margin: 0 auto;
+  padding: 32px 24px;
+}
+
+/* 2. Elevated Interactive Back Button Styling */
+.backButton {
+  background-color: #ffffff;
+  border: 1px solid #d1d5db;
+  color: #4b5563;
+  cursor: pointer;
+  font-size: 0.9rem;
+  font-weight: 500;
+  padding: 10px 18px;
+  border-radius: 8px;
+  margin-bottom: 28px;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+  transition: all 0.2s ease;
+}
+
+.backButton:hover {
+  background-color: #f9fafb;
+  color: #2563eb;
+  border-color: #3b82f6;
+  transform: translateX(-2px);
+}
+
+.backArrow {
+  font-size: 1.1rem;
+  transition: transform 0.2s ease;
+}
+
+/* Question Document Presentation block */
+.questionBlock {
+  background-color: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  padding: 32px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.02);
+  margin-bottom: 32px;
+}
+
+.title {
+  font-size: 1.85rem;
+  font-weight: 700;
+  color: #111827;
+  line-height: 1.35;
+  margin: 0 0 12px 0;
+}
+
+.meta {
+  font-size: 0.88rem;
+  color: #6b7280;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.authorBadge {
+  color: #374151;
+}
+
+.dotSeparator {
+  color: #d1d5db;
+}
+
+.description {
+  font-size: 1.05rem;
+  line-height: 1.65;
+  color: #374151;
+  white-space: pre-wrap;
+  margin: 24px 0;
+}
+
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.tag {
+  background-color: #eff6ff;
+  color: #1d4ed8;
+  padding: 6px 12px;
+  border-radius: 6px;
+  font-size: 0.82rem;
+  font-weight: 500;
+}
+
+.sectionHeading {
+  font-size: 1.35rem;
+  font-weight: 600;
+  color: #1f2937;
+  margin-bottom: 20px;
+}
+
+.answerCard {
+  background-color: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: 10px;
+  padding: 20px 24px;
+  margin-bottom: 16px;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.01);
+  display: flex;
+  gap: 24px;
+}
+
+.voteColumn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-width: 40px;
+}
+.voteButton {
+  background: none;
+  border: none;
+  font-size: 1.25rem;
+  color: #9ca3af;
+  cursor: pointer;
+  padding: 4px;
+  border-radius: 4px;
+  transition: all 0.15s ease;
+  user-select: none;
+}
+
+.voteButton:hover {
+  color: #2563eb;
+  background-color: #eff6ff;
+  transform: scale(1.15);
+}
+
+.voteScore {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: #374151;
+  margin: 4px 0;
+}
+
+.negativeScore {
+  color: #dc2626;
+}
+
+.answerMainBlock {
+  flex: 1;
+}
+
+.answerContent {
+  margin: 0 0 16px 0;
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #374151;
+}
+
+.answerMeta {
+  font-size: 0.84rem;
+  color: #6b7280;
+  border-top: 1px solid #f3f4f6;
+  padding-top: 12px;
+}
+
+.ansAuthorBadge {
+  color: #4b5563;
+}
+.submitAnswerBtn {
+  width: 100%;
+  box-sizing: border-box;
+  background-color: #2563eb;
+  color: #ffffff;
+  font-weight: 600;
+  font-size: 1rem;
+  padding: 12px 24px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  text-align: center;
+  margin-top: 8px;
+}
+
+.submitAnswerBtn:hover:not(:disabled) {
+  background-color: #1d4ed8;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+}
+
+.submitAnswerBtn:active:not(:disabled) {
+  transform: scale(0.99);
+}
+
+.submitAnswerBtn:disabled {
+  background-color: #9ca3af;
+  cursor: not-allowed;
+  opacity: 0.7;
+  box-shadow: none;
+}
+.answerInput {
+  width: 100%;
+  max-width: 100%;
+  min-width: 100%;
+  box-sizing: border-box;
+  padding: 14px 16px;
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+  font-family: inherit;
+  font-size: 0.98rem;
+  line-height: 1.6;
+  color: #1f2937;
+  background-color: #ffffff;
+}
+
+.noAnswersCard {
+  background-color: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: 10px;
+  padding: 40px;
+  text-align: center;
+}
+
+.noAnswers {
+  color: #6b7280;
+  font-style: italic;
+  margin: 0;
+}
+
+/* 1. Fully Centered & Styled Loading State With Spinner Engine */
+.loadingContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: #f9fafb;
+}
+
+.spinner {
+  width: 48px;
+  height: 48px;
+  border: 4px solid #e5e7eb;
+  border-top-color: #2563eb;
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+}
+
+.loadingText {
+  margin-top: 16px;
+  font-size: 1.05rem;
+  font-weight: 500;
+  color: #4b5563;
+}
+
+/* Error UI Layout */
+.errorContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: #f9fafb;
+  padding: 24px;
+}
+
+.errorCard {
+  background-color: #ffffff;
+  border: 1px solid #fecaca;
+  padding: 32px;
+  border-radius: 12px;
+  text-align: center;
+  max-width: 400px;
+  color: #dc2626;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+}
+
+.errorBtn {
+  background-color: #dc2626;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 6px;
+  font-weight: 500;
+  margin-top: 16px;
+  cursor: pointer;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
