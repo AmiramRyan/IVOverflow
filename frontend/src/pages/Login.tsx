@@ -66,7 +66,7 @@ export default function Login({ onLoginSuccess }: LoginProps) {
               value={email}
               onChange={(e) => setEmail(e.target.value)}
               className={styles.input}
-              placeholder="amiram@ivtech.com"
+              placeholder="username@ivtech.com"
               disabled={isLoading}
             />
           </div>
