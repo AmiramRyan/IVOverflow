@@ -17,7 +17,7 @@ export interface Question {
     _id: string;
     nickname?: string;
     fullName?: string;
-  };
+  } | null;
   createdAt: string;
   updatedAt?: string;
   answers: Answer[];
@@ -51,8 +51,13 @@ export interface VoteResponse {
   netScore: number;
 }
 
+const rawApiUrl = process.env.REACT_APP_API_URL || 'http://localhost:5000/api';
+const baseUrl = rawApiUrl.endsWith('/api')
+  ? rawApiUrl
+  : `${rawApiUrl.replace(/\/$/, '')}/api`;
+
 const baseQuery = fetchBaseQuery({
-  baseUrl: process.env.REACT_APP_API_URL || 'http://localhost:5000/api',
+  baseUrl,
   prepareHeaders: (headers, { getState }) => {
     const token = (getState() as RootState).auth.token;
     if (token) {

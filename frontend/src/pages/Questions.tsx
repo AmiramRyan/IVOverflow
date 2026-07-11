@@ -38,13 +38,10 @@ export default function Questions({ onLogout }: QuestionsProps) {
   };
 
   const getAuthorDisplay = (question: Question): string => {
-    if (question.author.nickname) return question.author.nickname;
-    
-    if (question.author && typeof question.author === 'object') {
-      if (question.author.nickname) return question.author.nickname;
-      if (question.author.fullName) return question.author.fullName;
-    }
-    
+    const author = question.author;
+    if (!author || typeof author !== 'object') return 'Unknown User';
+    if (author.nickname) return author.nickname;
+    if (author.fullName) return author.fullName;
     return 'Unknown User';
   };
 
